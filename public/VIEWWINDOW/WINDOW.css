@@ -1,0 +1,70 @@
+body {
+  background-color: black;
+}
+
+#view-window {
+  width: 1000px;
+  height: 800px;
+  position: relative;
+  background-size: cover;
+}
+
+#gun_fire {
+  z-index: 100;
+  position: absolute;
+}
+
+#crosshair {
+  position: absolute;
+}
+
+#ammo-counter {
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  position: absolute;
+}
+
+#health-counter {
+  top: 16px;
+  left: 0px;
+  z-index: 99;
+  position: absolute;
+}
+
+#airhub-scroller, #start-scroller, #campaign-scroller2, #range-scroller, #vidya-scroller {
+  height: 500px;
+}
+
+#rail-canvas {
+  position: relative;
+}
+
+#other-worlds {
+  background-image: url("../RAILREADY/worldsbg.png");
+}
+
+#multiplayer-layer {
+  background-image: url("../RAILREADY/multiplayerbg.png");
+}
+
+.layer {
+  top: 0px;
+  left: 0px;
+  width: 1000px;
+  height: 800px;
+  position: absolute;
+  background-size: cover;
+}
+
+.xrail {
+  display: none;
+}
+
+.start-menu-option {
+  border: hidden;
+}
+
+.start-menu-option:hover {
+  padding: 3px;
+}

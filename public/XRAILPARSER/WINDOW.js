@@ -1,0 +1,1 @@
+const view_window = document.getElementById("view-window");

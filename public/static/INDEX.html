@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailReady 2</title>
+    
+    <link href="https://codesalvageon.github.io/magichat/styles/index.css" rel="stylesheet">
+    <link href="/VIEWWINDOW/WINDOW.css" rel="stylesheet">
+    <link href="/VIEWWINDOW/ENEMIES.css" rel="stylesheet">
+    <link href="/RAILREADY/skull.png" rel="shortcut icon">
+  </head>
+  <body>
+    <center>
+      <h1><tt class="error" id="usage-status">Please wait until the page is fully loaded to play the game properly.</tt></h1>
+      <div id="view-window">
+        <pre class="error" id="ammo-counter"></pre>
+        <pre class="error" id="health-counter"></pre>
+        <canvas id="view-railtrack" class="layer"></canvas>
+        <canvas id="view-items" class="layer"></canvas>
+        <div id="view-entities" class="layer"></div>
+        <div id="campaign" class="layer">
+          <div class="modal add-scroll" id="campaign-scroller">
+            <div class="modal-content">
+               <button class="button paragraph" id="go-back-from-campaign"><tt>Go back</tt></button>
+               <div>
+                 <h2 class="error"><tt>RailReady Campaigns</tt></h2> 
+                   <button class="start-menu-option" id="railready2-button"> 
+                     <img src="/RAILREADY/railready2.PNG"/>
+                   </button>
+                   <button class="start-menu-option" id="railready1-button"> 
+                     <img src="/RAILREADY/railready1.PNG"/>
+                   </button>
+                   <button class="start-menu-option" id="reccenter-button"> 
+                     <img src="/RAILREADY/reccenter.PNG"/>
+                   </button>
+                   <h2><tt><a href="/DOWNLOADS/RAILREADY1DOWNLOAD.zip" target="_blank">Download RailReady 1</a></tt></h2>
+               </div>
+            </div>
+            <div class="modal" id="railready1">
+              <div class="modal-content">
+                <button class="button paragraph" id="go-back-from-railready1"><tt>Go back</tt></button>
+                <h2 class="error"><tt>Playing: RailReady One</tt></h2>
+                <iframe src="https://railready2.codesalvageon.repl.co/static/RAILREADY1.html" width="800" height="600" frameBorder="0" id="railready1-frame"></iframe> 
+              </div> 
+            </div>
+            <div class="modal" id="reccenter"> 
+              <div class="modal-content">
+                <button class="button paragraph" id="go-back-from-reccenter"><tt>Go back</tt></button>
+                <h2 class="error"><tt>Playing: The Recreation Center</tt></h2> 
+                <iframe src="https://reccenter.codesalvageon.repl.co/" width="800" height="600" frameBorder="0"></iframe> 
+              </div>
+            </div> 
+          </div> 
+          <div id="rail-canvas-div">
+            <canvas id="rail-canvas" width="1000" height="800"></canvas> 
+            <img src="/RAILREADY/ENEMIES/WIIUOWNER/ch1_enemy_1_frame1.png" width="100" height="220" id="wiiu-sprite1"/>
+            <img src="/RAILREADY/ENEMIES/SUICIDEBOT/suicidebot.png" width="385" height="650" id="suicidebot-sprite1"/>
+            <img src="/RAILREADY/ENEMIES/DICKSUCKER/dicksucker.png" id="dicksucker-sprite1"/>
+            <img src="/RAILREADY/ENEMIES/SECURITY/securityguard.png" id="security-sprite1"/>
+            <img src="/RAILREADY/ENEMIES/PRINCIPLE/principle.png" id="principal-sprite1"/>
+          </div>
+        </div>
+        <div id="airhub" class="layer"> 
+          <div class="modal add-scroll" id="airhub-scroller">
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-airhub"><tt>Go back</tt></button>
+              <h2 class="error"><tt>Anti-i-Ready Reaction Hub</tt></h2> 
+              <h3><tt>View the full Document <a href="https://telescreen.codesalvageon.repl.co/" target="_blank">here</a>.</tt></h3>
+              <h3><tt><a href="https://github.com/ArjhanToteck/iReady-Overload" target="_blank">i-Ready Hacks</a> made by Supreme Commodore u/midget_fucker69 on Reddit</tt></h3>
+              <iframe src="https://telescreen.codesalvageon.repl.co/" width="800" height="800" frameBorder="0"></iframe>
+            </div> 
+          </div>
+        </div>
+        <div id="lighthouse" class="layer">
+          <div class="modal add-scroll" id="lighthouse-scroller">
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-lighthouse"><tt>Go back</tt></button>
+              <h2 class="error"><tt>The Lighthouse</tt></h2> 
+              <button class="start-menu-option" id="leaderboards-button"> 
+                <img src="/RAILREADY/leaderboard.PNG"/>
+              </button>
+              <button class="start-menu-option" id="telescreener-button"> 
+                <img src="/RAILREADY/thetelescreener.PNG"/>
+              </button>
+              <button class="start-menu-option" id="sim-button"> 
+                <img src="/RAILREADY/sim.PNG"/>
+              </button>
+              <button class="start-menu-option" id="wiki-button"> 
+                <img src="/RAILREADY/thewiki.PNG"/>
+              </button>
+            </div> 
+          </div>
+          <div class="modal add-scroll" id="sim-iframe"> 
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-sim"><tt>Close this window</tt></button>
+              <iframe src="https://skyscraper-in-the-snow.codesalvageon.repl.co/chat" frameBorder="0" width="800" height="550"></iframe> 
+            </div>
+          </div>
+          <div class="modal add-scroll" id="telescreener-iframe"> 
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-telescreener"><tt>Close this window</tt></button>
+              <iframe src="https://telescreener.codesalvageon.repl.co/" frameBorder="0" width="800" height="550"></iframe> 
+            </div>
+          </div>
+          <div class="modal add-scroll" id="wiki-iframe"> 
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-wiki"><tt>Close this window</tt></button>
+              <iframe src="https://iready.miraheze.org/wiki/Main_Page" frameBorder="0" width="800" height="550"></iframe> 
+            </div>
+          </div>
+          <div class="modal" id="leaderboard-modal">
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-leaderboard"><tt>Close this window</tt></button> 
+              <br/>
+              <h3><tt><a href="https://discord.gg/8qz9c7UWpx" target="_blank">Like speedrunning? Join the Discord!</a></tt></h3>
+              <h2><tt id="current-score">Current RailReady 2 High Score: 1140</tt></h2>
+              <h2><tt id="held-by">Held by: CyberCommander Zheng</tt></h2>
+            </div> 
+          </div>
+        </div>
+        <div id="shooting-range" class="layer"> 
+          <div class="modal" id="range-modal"> 
+            <div class="modal-content"> 
+              <button class="button paragraph" id="go-back-from-range"><tt>Go back</tt></button>
+              <h2 class="error"><tt>The Shooting Range</tt></h2> 
+              <div id="range-scroller" class="add-scroll">
+                <h3 class="error"><tt>The Tec-9</tt></h3>
+                <img src="/RAILREADY/GUNS/1.jpeg"/>
+                <h4><tt>The Tec-9 was used by Sweet-T and G.O. in the Central City School Shooting, and was later used by WiiU Owner in the Palm Tree Party. It is a pistol prone to jamming. <a href="https://youtu.be/JoI2O2UPzUI" target="_blank">The gun in action.</a></tt></h4> 
+                <h3 class="error"><tt>The MP-40</tt></h3>
+                <img src="/RAILREADY/GUNS/2.jpeg" width="300" height="200"/>
+                <h4><tt>The MP-40 was used by Sweet-T against three Curriculum Associates security guards. The German submachine gun is iconic, and usually fully automatic, but strangely the one Sweet-T used was semi-automatic only. <a href="https://youtu.be/O38a_Bx18RU" target="_blank">The gun in action.</a></tt></h4> 
+                <h3 class="error"><tt>The X26 Taser</tt></h3>
+                <img src="/RAILREADY/GUNS/3.jpeg" width="300" height="200"/>
+                <h4><tt>The X26 Taser was used primarily by Curriculum Associates Security Guards, but they proved to be useless both in terms of range and in damage against Sweet-T's MP-40. <a href="https://youtu.be/f1n9oBqEEl0" target="_blank">The gun in action.</a></tt></h4>
+                <h3 class="error"><tt>The PLR-16</tt></h3>
+                <img src="/RAILREADY/GUNS/4.jpeg" width="300" height="200"/>
+                <h4><tt>The PLR-16 was a pistol chambered in .223 used by Jake The Jihader during the Palm Tree Party. It was left behind by WiiU Owner, who favored the Tec-9. It is rumored to be more reliable and just as accurate as an AR-15. <a href="https://youtu.be/jPdnua8NlPo" target="_blank">The gun in action.</a></tt></h4>
+                <h3 class="error"><tt>The FAD</tt></h3>
+                <img src="/RAILREADY/GUNS/5.jpeg" width="300" height="200"/>
+                <h4><tt>The FAD was an assault rifle used by Jake The Jihader. Jake used the FAD to escape from a crashed school bus, and would later use it to kill a security guard and a school board member. No videos of this gun ;(</tt></h4>
+                <h3 class="error"><tt>The Kel Tec Sub-2000</tt></h3>
+                <img src="/RAILREADY/GUNS/6.jpeg" width="300" height="200"/>
+                <h4><tt>The Kel Tec Sub-2000 was a handy 9mm carbine used by Plory during the Daycare Center Massacre. It had a foldable stock and could be concealed easily. <a href="https://youtu.be/I979gQaLvn4" target="_blank">The gun in action.</a></tt></h4>
+                <h3 class="error"><tt>The Claridge Hi Tec S9</tt></h3>
+                <img src="/RAILREADY/GUNS/7.jpeg" width="300" height="200"/>
+                <h4><tt>The Claridge Hi Tec S9 was a semi-automatic pistol used by Yoop during the Daycare Center Massacre. Yoop had modified his pistol so that it slam-fired, making it fully automatic. <a href="https://youtu.be/dDADGkPSuA0" target="_blank">The gun in action.</a></tt></h4>
+                <h2 class="error"><tt>Credits</tt></h2>
+                <h3><tt>Programming and "Art": CodeSalvageON, aka u/CodeTheCrackAddict</tt></h3>
+                <h3><tt>Hacks: u/midget_fucker69</tt></h3>
+                <h3><tt>Inspiration: LA Machine Guns, Gunblade NY, Time Crisis Two, Beast Busters, Terminator Salvation</tt></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="arcade-room" class="layer"> 
+          <div id="arcade-modal" class="modal"> 
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-arcade"><tt>Go back</tt></button> 
+              <br/>
+              <button class="start-menu-option" id="vidya-button">
+                <img src="/RAILREADY/vidya.jpeg" width="800" height="160"/>
+              </button>
+              <button class="start-menu-option" id="airtv-button">
+                <img src="/RAILREADY/airtv.jpeg" width="800" height="160"/>
+              </button>
+              <button class="start-menu-option" id="mtv-button">
+                <img src="/RAILREADY/mtv.jpeg" width="800" height="160"/>
+              </button>
+            </div>
+          </div>
+          <div id="vidya-modal" class="modal">
+            <div class="modal-content"> 
+              <button class="button paragraph" id="go-back-from-vidya"><tt>Go back</tt></button>
+              <br/>
+              <center id="vidya-scroller" class="add-scroll">
+                <h2><tt>Beast Busters</tt></h2>
+                <iframe src="https://archive.org/embed/arcade_bbusters" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+                <hr/>
+                <h2><tt>Operation Wolf</tt></h2>
+                <iframe src="https://archive.org/embed/msdos_Operation_Wolf_1989" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+                <hr/>
+                <h2><tt>DOOM</tt></h2>
+                <iframe src="https://archive.org/embed/msdos_DOOM_1993" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+                <hr/>
+                <h2><tt>DOOM II</tt></h2>
+                <iframe src="https://archive.org/embed/Doom-2" width="560" height="384" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+              </center>
+            </div> 
+          </div>
+          <div id="airtv-modal" class="modal">
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-airtv"><tt>Go back</tt></button>
+              <br/>
+              <center> 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL1KJ0I7lUj0TGDljLwul0kigIpkurWFw3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </center> 
+            </div> 
+          </div>
+          <div id="mtv-modal" class="modal">
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-mtv"><tt>Go Back</tt></button> 
+              <br/>
+              <center>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLHSbAz1hu9sTnkrwFTvSmPYOUEGOMczjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </center>
+            </div> 
+          </div>
+        </div>
+        <div id="other-worlds" class="layer">
+          <div id="other-worlds-modal" class="modal">
+            <div class="modal-content">
+              <button class="button paragraph" id="go-back-from-other-worlds"><tt>Go Back</tt></button> 
+              <br/>
+              <button class="start-menu-option" id="mondas-button">
+                <img src="/RAILREADY/mondas.jpeg" width="800" height="160"/>
+              </button>
+              <button class="start-menu-option" id="borg-button">
+                <img src="/RAILREADY/borg.jpeg" width="800" height="160"/>
+              </button>
+            </div>
+          </div> 
+          <div id="mondas-modal" class="modal">
+            <div class="modal-content">
+               <button class="button paragraph" id="go-back-from-mondas"><tt>Go Back</tt></button> 
+               <br/>
+               <iframe src="https://nesucks.vercel.app/" frameBorder="0" width="800" height="800"></iframe>
+            </div> 
+          </div>
+          <div id="borg-modal" class="modal">
+            <div class="modal-content">
+               <button class="button paragraph" id="go-back-from-borg"><tt>Go Back</tt></button> 
+               <br/>
+               <iframe src="https://arjhantoteck.vercel.app/" frameBorder="0" width="800" height="800"></iframe>
+            </div> 
+          </div>
+        </div>
+        <div id="multiplayer-layer" class="layer"> 
+          <div id="multiplayer-modal" class="modal">
+            <div class="modal-content">
+               <button class="button paragraph" id="go-back-from-multiplayer"><tt>Go Back</tt></button> 
+               <br/>
+               <button class="start-menu-option" id="fb-button">
+                <img src="/RAILREADY/fb.jpeg" width="800" height="160"/>
+              </button>
+              <button class="start-menu-option" id="cf-button">
+                <img src="/RAILREADY/cf.jpeg" width="800" height="160"/>
+              </button>
+            </div> 
+          </div>
+          <div id="cf-modal" class="modal">
+           <div class="modal-content"> 
+             <button class="button paragraph" id="go-back-from-cf"><tt>Go Back</tt></button> 
+             <br/>
+             <h1><tt>Couch Fishing</tt></h1>
+             <button class="button" id="reel-btn">Press to Reel</button>
+             <h2><tt id="cf-score">Your Score: 0</tt></h2>
+             <h2><tt id="cf-global">Highest Score: </tt></h2>
+           </div> 
+          </div>
+          <div id="fb-modal" class="modal">
+            <div class="modal-content"> 
+              <button class="button paragraph" id="go-back-from-fb"><tt>Go Back</tt></button> 
+             <br/>
+             <h1><tt>Frog Baseball</tt></h1>
+             <button class="button" id="batter-up">Batter Up!</button>
+             <h2><tt id="fb-status">Not Active</tt></h2>
+             <h2><tt id="fb-global">Current Opponent: Nobody Is Online!</tt></h2>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <div class="modal" id="air-radio">
+        <div class="modal-content">
+          <tt><h3>It is suggested that you turn on the AIR Radio for the best gameplay possible. If you do not choose to turn on the AIR Radio, it is always avalible to turn on and off during gameplay.</h3></tt>
+          <button class="paragraph button" id="close-air-radio"><tt>Close this window</tt></button>
+          <br/>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL1KJ0I7lUj0QeyF4FTt9HPDIHczqY6o9K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+          <tt><h3>Press R (while not in-game) to show AIR Radio options at any time.</h3></tt>
+        </div> 
+      </div>
+      <div id="start-menu" class="modal add-scroll">
+        <div class="modal-content add-scroll">
+          <h3><tt class="error">Join our <a href="https://discord.gg/kJs52cSgAk" target="_blank">Discord server</a>, if you'd like! (And the <a href="https://www.reddit.com/r/Iready/" target="_blank">subreddit</a> too!)</tt></h3>
+          <div class="add-scroll" id="start-scroller">
+            <button class="start-menu-option" id="campaign-button">
+              <img src="/RAILREADY/campaign.PNG"/>
+            </button>
+            <button class="start-menu-option" id="airhub-button">
+              <img src="/RAILREADY/airhub.PNG"/>
+            </button>
+            <button class="start-menu-option" id="lighthouse-button">
+              <img src="/RAILREADY/thelighthouse.PNG"/>
+            </button>
+            <button class="start-menu-option" id="shooting-button"> 
+              <img src="/RAILREADY/shootingrange.PNG"/>
+            </button>
+            <button class="start-menu-option" id="arcade-button">
+              <img src="/RAILREADY/thearcade.PNG"/>
+            </button>
+            <button class="start-menu-option" id="multiplayer-button">
+              <img src="/RAILREADY/multiplayer-games.PNG"/>
+            </button>
+            <button class="start-menu-option" id="worlds-button">
+              <img src="/RAILREADY/otherworlds.jpeg" width="800" height="160"/>
+            </button>
+            <button class="start-menu-option" id="challenges-button">
+              <img src="/RAILREADY/challenges.jpeg" width="800" height="160"/>
+            </button>
+            <button class="start-menu-option" id="pharmacy-button">
+              <img src="/RAILREADY/pharmacy.jpeg" width="800" height="160"/>
+            </button>
+            <button class="start-menu-option" id="skynet-button">
+              <img src="/RAILREADY/skynet.jpeg" width="800" height="160"/>
+            </button>
+          </div>
+        </div>
+      </div> 
+    </center>
+
+    <img src="" id="gun_fire"/>
+    <img src="" id="crosshair"/>
+
+    <audio src="" id="plr16"></audio>
+    
+    <!-- Cutscene One -->
+    <audio src="/RAILREADY/CUTSCENE1/guncrowd.mp3" id="guncrowd"></audio>
+
+    <!-- Knife Scene? -->
+    <audio src="/RAILREADY/CH2/knife_throw.mp3" id="knife_throw"></audio>
+
+    <!-- Hijack that bus! My bomb my choice! -->
+    <audio src="/RAILREADY/CH2/kids_screaming.mp3" id="kids_screaming"></audio>
+    <audio src="/RAILREADY/CH2/car_crash.mp3" id="car_crash"></audio>
+    <audio src="/RAILREADY/CH2/metal_bounce.mp3" id="metal_bounce"></audio>
+
+    <!-- Cutscene Four -->
+    <audio src="/RAILREADY/CUTSCENE4/mm1.mp3" id="mm1"></audio>
+    <audio src="/RAILREADY/CUTSCENE4/mm2.mp3" id="mm2"></audio>
+
+    <!-- I am the great Cornholio! I need missilies for my bunghole! -->
+    <audio src="/RAILREADY/CH4/missile.mp3" id="missile"></audio>
+    <audio src="/RAILREADY/CH4/blast.mp3" id="xplode"></audio>
+
+    <!-- That one Ministry album I hate, like what the fuck, you're in your 60s and you think some commie group is cool? -->
+    <audio src="/RAILREADY/CH4/fire.mp3" id="ch4_fire"></audio>
+    <audio src="/RAILREADY/CH4/glass.mp3" id="ch4_glass"></audio>
+
+    <!-- Enemies -->
+    <audio src="/RAILREADY/ENEMIES/SOUNDS/blood.mp3" id="bloody"></audio>
+    <audio src="/RAILREADY/ENEMIES/SOUNDS/gunshot.mp3" id="ak"></audio>
+    <audio src="/RAILREADY/ENEMIES/SOUNDS/blast.mp3" id="blast"></audio>
+    <audio src="/RAILREADY/ENEMIES/SOUNDS/shotgun.mp3" id="shotgun"></audio>
+    <audio src="/RAILREADY/ENEMIES/SOUNDS/spray.mp3" id="spray"></audio>
+
+    <script src="/XRAILPARSER/JQUERY.js"></script>
+    <script src="/XRAILPARSER/COLLISION.js"></script>
+    <script src="/RAILREADY/CROSSHAIR.js"></script>
+    <script src="/RAILREADY/MUZZLEFLASH.js"></script>
+    <script src="/RAILREADY/COVER.js"></script>
+    <script src="/RAILREADY/BG1.js"></script>
+    <script src="/RAILREADY/BG2.js"></script>
+    <script src="/RAILREADY/LIGHTHOUSE.js"></script>
+    <script src="/RAILREADY/HELICOPTER.js"></script>
+    <script src="/RAILREADY/RANGE.js"></script>
+    <script src="/RAILREADY/SOUNDEFFECT.js"></script>
+    <script src="/XRAILPARSER/SOUNDPARSER.js"></script>
+    <script src="/XRAILPARSER/WINDOW.js"></script>
+    <script src="/XRAILPARSER/RAILS.js"></script>
+    <script src="/XRAILPARSER/WEAPON.js"></script>
+    <script src="/XRAILPARSER/INIT.js"></script>
+    <script src="/XRAILPARSER/CANVAS.js"></script>
+    <script src="/XRAILPARSER/SCORE.js"></script>
+    <script src="/XRAILPARSER/DEFENSE.js"></script>
+    
+    <script src="/XRAILPARSER/MULTIPLAYER/CF.js"></script>
+    <script src="/XRAILPARSER/MULTIPLAYER/FB.js"></script>
+    
+    <!--
+    <script src="/XRAILPARSER/BOLT2.js"></script>
+    <script src="/XRAILPARSER/BOLT.js"></script>
+    <script src="/XRAILPARSER/BOLT3.js"></script>
+    <script src="/XRAILPARSER/BOLT4.js"></script>
+    -->
+    
+    <script src="/XRAILPARSER/ENEMY/ALL.js"></script>
+
+    <!-- SFUNC AND GFUNC -->
+    <script src="/XRAILPARSER/GFUNC/SVAR.js"></script>
+    <script src="/XRAILPARSER/GFUNC/SFUNC1.js"></script>
+    <script src="/XRAILPARSER/GFUNC/SFUNC2.js"></script>
+  </body>
+</html>

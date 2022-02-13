@@ -1,0 +1,5 @@
+setTimeout(function () {
+                        $("#rail-canvas-div").fadeOut(2000);
+
+                        guncrowd.play();
+                      }, 10000);
